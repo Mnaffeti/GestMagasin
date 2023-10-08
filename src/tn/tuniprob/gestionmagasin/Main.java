@@ -3,6 +3,9 @@ package tn.tuniprob.gestionmagasin;
 
 
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
 import static tn.tuniprob.gestionmagasin.Magasin.getTotale;
 import static tn.tuniprob.gestionmagasin.Produit.comparer;
 
@@ -10,7 +13,7 @@ import static tn.tuniprob.gestionmagasin.Produit.comparer;
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MagasinPleinException  {
         /*Prosit 1 */
         Produit p= new Produit() ;
         Produit p1=new Produit(1021,"lait","delice",1.070) ;
@@ -61,6 +64,20 @@ public class Main {
         System.out.println(mg2);
         mg2.printSalaire();
         System.out.println(v5.equals(v4));
+        mg2.AffichePrime();
+        Magasin m5= new Magasin(1,"cite tadhamen") ;
+        /// modify the capacity of the magasin to throw the full mg exception
+        m5.setM_pProduits(p1);
+        m5.setM_pProduits(p2);
+        ///m5.setM_pProduits(p3);
+        Produit pespi=new Produit(7,"sooda","pepsi",-5.0) ;
+
+
+
+
+
+
+
 
 
 

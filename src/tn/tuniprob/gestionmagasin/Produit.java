@@ -14,6 +14,15 @@ public class Produit {
         m_iId=l_id ;
         m_slibelle=l_sLibelle ;
         m_sMarque=l_sMarque ;
+        if (l_dPrix< 0) {
+            try {
+                throw new PrixnegatifException("le prix est negatif");
+            } catch (PrixnegatifException c) {
+                throw new RuntimeException(c);
+            }
+
+
+        }
         m_dPrix=l_dPrix ;
     }
     Produit(int l_id ,String l_sLibelle,String l_sMarque){

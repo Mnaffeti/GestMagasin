@@ -20,13 +20,27 @@ public class Magasin {
 
      }
 
-     public void setM_pProduits(Produit p) {
+    /* public void setM_pProduits(Produit p) {
          if ((m_iNbProduit <= m_ciCapacite) && (!this.Recherche(p))) {
              m_pProduits[m_iNbProduit] = p;
              m_iNbProduit++;
          } else {
              System.out.println("produit mijoud");
          }
+         m_iTotaleProduit++;
+     } */
+     public  void setM_pProduits(Produit p ) throws MagasinPleinException {
+
+         if (m_iNbProduit >= m_ciCapacite) {
+             try {
+                 throw new MagasinPleinException("Magasin est plein a khouya");
+             } catch (MagasinPleinException e) {
+                 throw new RuntimeException(e);
+             }
+         }
+
+         m_pProduits[m_iNbProduit] = p;
+         m_iNbProduit++;
          m_iTotaleProduit++;
      }
 
